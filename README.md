@@ -17,12 +17,12 @@ It supports routing, templates, static files, forms, and session handling — al
 You can install Frost locally via pip:
 
 ```bash
-pip install frost
+pip install pythonfrost
 ```
 
 ## Quick Start
 ```py
-from frost import Server, route, read_template
+from pythonfrost import Server, route, read_template
 
 @route("/")
 def home():
@@ -33,20 +33,18 @@ Server()
 
 
 ## File Structure
-
+```
 frost/
-├─ frost/           
+├─ pythonfrost/           
 │  ├─ __init__.py
 │  ├─ server.py
 │  ├─ router.py
 │  ├─ response.py
 │  └─ session.py
-├─ templates/
-├─ static/
 ├─ setup.py
 ├─ README.md
 └─ LICENSE
-
+```
 
 ## Contributing
 
