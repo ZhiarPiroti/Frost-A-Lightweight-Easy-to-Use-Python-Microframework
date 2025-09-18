@@ -1,7 +1,7 @@
 # Frost
 
-Frost is a lightweight Python web framework built from scratch.  
-It supports routing, templates, static files, forms, and session handling — all without any heavy dependencies.
+**Zero Dependencies:** PythonFrost is built entirely with Python's standard libraries—no external packages required. Everything, from HTTP handling and routing to sessions and template rendering, is implemented from scratch.
+
 
 # Documentation
 
