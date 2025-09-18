@@ -10,5 +10,5 @@ We welcome contributions of all sizes—from fixing typos to adding new features
 
 2. **Clone your fork**  
    ```bash
-   git clone https://github.com/your-username/PythonFrost.git
+   git clone https://github.com/ZhiarPiroti/PythonFrost.git
    cd PythonFrost
