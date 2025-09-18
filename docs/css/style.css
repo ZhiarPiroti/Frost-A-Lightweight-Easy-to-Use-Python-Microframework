@@ -1,0 +1,77 @@
+/* === Base Styles === */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #222222;
+    color: #e6e6e6;
+}
+
+/* === Headings === */
+h1, h2, h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    color: #dbdbdb;
+}
+
+h1 {
+    font-size: 2em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 1.2em;
+}
+
+/* === Paragraphs & Lists === */
+p {
+    margin-bottom: 1em;
+}
+
+ul, ol {
+    margin: 0 0 1em 1.5em;
+}
+
+/* === Links === */
+a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* === Code Styling === */
+code {
+    background: #272822;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.95em;
+}
+
+pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    margin-bottom: 1.2em;
+}
+
+/* === Footer === */
+footer {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #ddd;
+    font-size: 0.9em;
+    text-align: center;
+    color: #666;
+}
