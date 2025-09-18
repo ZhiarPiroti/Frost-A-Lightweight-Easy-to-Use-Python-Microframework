@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routing - Pythonfrost Documentation</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <h1>Routing</h1>
+  <p>
+    Routing in <strong>Pythonfrost</strong> allows you to connect URL paths to Python functions easily.
+  </p>
+
+  <h2>Basic Route</h2>
+  <pre><code>from pythonfrost import Server, route
+
+route("/")
+def home():
+    return "Hello, World!"
+
+Server()</code></pre>
+
+  <h2>Dynamic Routes</h2>
+  <p>You can pass parameters directly in the URL:</p>
+  <pre><code>route("/sayhello/&lt;username&gt;")
+def greet(username):
+    return f"Hello, {username}"</code></pre>
+
+  <h2>Multiple Routes</h2>
+  <p>Define as many routes as you need:</p>
+  <pre><code>route("/sayhello/&lt;username&gt;"")
+def greet(username):
+    return f"Hello, {username}"
+
+route("/")
+def home():
+    return f"Home Page"</code></pre>
+
+  <p>
+    Routes make it simple to build web applications, from small projects to more complex sites.
+  </p>
+  <h2>Read Template</h2>
+  <p>Read an HTML page template using read_template() function</p>
+  <pre>
+<code>from pythonfrost import read_template, route, Server
+
+@route("/")
+def home():
+    return read_template("index.html")
+
+Server()</code></pre>
+  <p>you have to create a folder called "templates" and put your html files there to read the template.</p>
+
+  <h2>Static Files</h2>
+  <p>to add your static files (CSS, JS) you have to create a folder in your project folder called: "static" and put your static files in static folder.</p>
+  <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+  <h2>Template Interpolation</h2>
+  <p>to replace a varriable in html directly in python here's an easy way:</p>
+  <p>HTML:</p>
+  <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;{{ title }}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;{{ name }}&lt;/p&gt;
+    &lt;li&gt;
+        &lt;ul&gt;{{ numbers }}&lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+  <p>Python:</p>
+  <pre>
+<code>from pythonfrost import read_template, route, Server
+
+
+@route("/")
+def home():
+    context = {
+        "title":"test",
+        "name":"jack",
+        "numbers":[1,2,3]
+    }
+    return read_template("test.html", context=context)
+
+Server()
+</code></pre>
+  <footer>
+    <p><a href="index.html">← Back to Home</a></p>
+  </footer>
+</body>
+</html>

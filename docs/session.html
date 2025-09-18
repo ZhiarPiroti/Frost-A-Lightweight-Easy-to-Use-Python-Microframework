@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>Sessions</h1>
+    <p>create/get/destroy sessions in PythonFrost framework.</p>
+    <h2>Create Session</h2>
+    <p>by using this function you can create a session. morever in this example demonstrates how to Create/Delete/Get Sessions.</p>
+    <pre>
+from pythonfrost import route, Server, session, get_session, destroy_session
+
+@route("/")
+def test():
+    session(name="test_session", data="Hello World")
+    return "Session Created Successfuly!"
+
+@route("/getsession")
+def get_():
+    x = get_session("test_session")
+    return f"the data is: {x}"
+
+@route("/destroy")
+def destroy():
+    destroy_session("test_session")
+
+Server()</pre>
+  <footer>
+    <p><a href="index.html">← Back to Home</a></p>
+  </footer>
+</body>
+</html>

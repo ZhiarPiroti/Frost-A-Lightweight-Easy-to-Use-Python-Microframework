@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routing - Pythonfrost Documentation</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <h1>Responses</h1>
+  <p>Responses in Frost allows you to send back data & forms to the requests. </p>
+  <h2>Methods</h2>
+  <p>Methods are allow only indicated methods for a route request. we have 4 type of Methods that called: "GET", "POST", "PUT", "DELETE". the default method is GET.</p>
+  <p>Example:</p>
+  <pre>
+from pythonfrost import route, Server
+
+@route("/", methods=["POST"])
+def home():
+    return "this is only For POST Method"
+
+Server()</pre>
+  <h2>Send JSON</h2>
+  <p>this function will allow us to send JSON to client.</p>
+  <p>Example:</p>
+  <pre>
+from pythonfrost import route, Server, send_json
+
+@route("/")
+def home():
+    return send_json({"message":"this is a json"})
+
+Server()</pre>
+  <p>by default the status will be 200. we can set it our self by setting the function parameter.</p>
+  <p>Example:</p>
+  <pre>
+@route("/")
+def home():
+    return send_json({"message":"this is a json"}, status=404)</pre>
+  <h2>
+    Redirect
+  </h2>
+  <p>this fucntion allow you to Redirect to any route that you want.</p>
+  <p>Example:</p>
+  <pre>
+from pythonfrost import route, Server, redirect
+
+@route("/")
+def home():
+    return redirect("/safe")
+
+@route("/safe")
+def safe():
+    return "Hello!"
+
+Server()</pre>
+  <h2>Get Forms</h2>
+  <p>you can get any form from client just by inserting "form_data" to your function parameter</p>
+  <pre>
+@route("/", methods=["POST"])
+def getform(form_data):
+    data = form_data.get("YOUR_DATA_FORM_NAME_HERE")
+    return data</pre>
+  <footer>
+    <p><a href="index.html">← Back to Home</a></p>
+  </footer>
+</body>
+</html>
