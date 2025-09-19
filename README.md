@@ -23,7 +23,7 @@ Form Handling: POST & GET ready.
 
 Simple Session Management: Keep your users’ sessions lightweight and fast.
 
-# Benchmark Test
+# 🚀 Benchmark Test
 
 To evaluate PythonFrost's performance, we conducted a benchmark test by sending 100 sequential HTTP requests to a basic endpoint on localhost (127.0.0.1). The test was executed on a standard machine (CPU: Intel i5, RAM: 8GB).
 
@@ -52,7 +52,7 @@ test_request("http://127.0.0.1:8000/", 100)
 test_request("http://127.0.0.1:7000/", 100)
 ```
 
-**Results**
+# 📊 Results
 
 | Framework       | Avg Response Time (per request) |
 | --------------- | ------------------------------- |
